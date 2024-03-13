@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ilaiyaraja</title>
+    <link rel="icon" type="image/x-icon" href="D:\images\logo web.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+    <div class="container">
+        <div class="wrapper">
+            <div class="head">
+                <h1>Music Player</h1>
+                <div class="navbar-links">
+                    <p class="navbar-link"><a href="file:///d%3A/music_player/music.html">Home</a></p>
+                    <button class="openbtn" onclick="openNav()">Playlist</button>
+                    <p class="navbar-link"><a href="file:///D:/contactsweb.html">Contact</a></p>   
+                </div>
+            </div>
+           
+            </div>
+            <div class="container">
+              <div class="img">
+                <img src=".\imagemusic\ilayarajaimg.jpg" class="img1">
+            </div>
+           <div class="name">
+            <h2>Ilaiyaraja</h2>
+           </div>
+              <div class="audioplayer">
+                  <audio id="audioPlayer" src="" controls></audio>
+              </div>
+              <div class="tsong">
+                <h4>Songs</h4>
+              </div>
+              <ul id="playlist">
+                <div class="playl">
+                <li data-src=".\music\hukum.mp3"><div class="songtitle"><h4>Hukum Thalaivar <br>Singers : Anirudth Ravichander, Ranjiniganth</h4></div></li>
+                <li data-src=".\music\Ranjithame.mp3"><div class="songtitle"><h4>Ranjithame <br>Singers : Vijay , Manasi</h4></div></li>
+                <li data-src=".\music\naa ready.mp3"><div class="songtitle"><h4>Naa Ready<br> Singers : Vijay , An Anirudth Musical</h4></div></li>
+                <li data-src=".\music\adipoli.mp3"><div class="songtitle"><h4>Adipoli <br>Singers : Vineeth Sreenivasan, Sivaangi Krish, Siddhu Kumar</h4></div></li>
+                <li data-src=".\music\Kaththi theme.mp3"><div class="songtitle"><h4>Kaththi Theme <br>Singers : A Theme By Anirudth Ravichander</h4></div></li>
+                <li data-src=".\music\kaavaalaa.mp3"><div class="songtitle"><h4>Kaavaalaa <br>Singers : Shilpa Rao, Anirudh Ravichander, Arunraja Kamaraj</h4></div></li>
+            </div>
+              </ul>
+          </div>
+          <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const audioPlayer = document.getElementById("audioPlayer");
+          const playlistItems = document.querySelectorAll("#playlist li");
+      
+          let currentSong = 0;
+      
+          function playSong(songIndex) {
+              const song = playlistItems[songIndex];
+              audioPlayer.src = song.getAttribute("data-src");
+              audioPlayer.play();
+          }
+      
+          playlistItems.forEach((item, index) => {
+              item.addEventListener("click", function() {
+                  currentSong = index;
+                  playSong(currentSong);
+              });
+          });
+      
+          audioPlayer.addEventListener("ended", function() {
+              currentSong++;
+              if (currentSong >= playlistItems.length) {
+                  currentSong = 0;
+              }
+              playSong(currentSong);
+          });
+      });
+      
+          </script>
+          <style>
+      .container {
+          text-align: left;
+          padding: 20px;
+          padding-left: 20px;
+          border-radius: 10px;
+      }
+      
+      h1 {
+          margin-bottom: 20px;
+      }
+      
+      #playlist {
+          list-style: none;
+          padding: 10px;
+          font-size: 20px;
+          font-family: 'poppins',sans-serif;
+          background-color: #dfdfdf;
+          border-radius: 10px;
+          color: rgb(26, 26, 133);
+      }
+      
+      #playlist li {
+          margin-bottom: 10px;
+          cursor: pointer;
+      }
+      
+      #playlist li:hover {
+        color: rgb(182, 2, 2);
+      }
+    
+      .audioplayer{
+          text-align: center;
+      }
+      .img1{
+         justify-content: center;
+         border-radius: 10px;
+     }
+   .img{
+         padding: 10px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding-top: 40px;
+    
+      }
+      .name{
+        font-family: 'poppins',sans-serif;
+        color: rgb(0, 0, 131);
+        justify-content: center;
+        text-align: center;
+        font-size: 20px;
+      
+      }
+      .tsong{
+        font-size: 30px;
+        font-family: 'poppins',sans-serif;
+        color: rgb(0, 0, 131);
+      }
+      .songtitle{
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding-left: 33px;
+        padding-top: 2px;
+        padding-bottom: 0.4px;
+      }
+      .playl{
+        padding: 10px;
+        padding-top: 15px;
+      }
+          </style>
+      
+            <div class="service">
+              <div class="service-container-2">
+                  <div>
+                      <i class="fa-regular fa-face-smile"></i>
+                      <h4>Satisfaction Guarantee</h4>
+                      <p>We Provide the Best Listening Experience and Download and Enjoy</p>
+                  </div>
+                  <div>
+                      <i class="fa-regular fa-face-smile"></i>
+                      <h4>New songs</h4>
+                      <p>We Provide you New Songs in our Day Today Life</p>
+                  </div>
+                  <div>
+                      <i class="fa-regular fa-face-smile"></i>
+                      <h4>playlists</h4>
+                      <p>We Provide New Playlist from the Famous Musicians</p>
+                  </div>
+              </div>
+              
+                  </div>
+                  <div class="footer">
+                      <div class="footer-container">
+                          <div class="footer-box-1">
+                              <h2 class="headingtext">Music Player</h2>
+                              <p> We provide a best listening Experience and Good Customer Experience. </p>
+                              <div class="footer-icon">
+                                  <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                                  <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                                  <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                              </div>
+              
+                          </div>
+                      </div>
+                      <p>&copy; 2024 Music Player. All Rights Reserved.</p>
+        <p class="companyname" style="font-family: 'anta',sans-serif;">Powered By : Suriya Technologies Pvt Ltd.</p>
+
+                  </div>
+                      </div>
+                  </div>
+                </div>
+              <style>
+              
+                  .head{
+                      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+                      padding: 7px;
+                      display: flex;
+                      font-family: 'poppins',sans-serif;
+                      font-size: 16px;
+                      justify-content: space-between;
+                      color: rgb(1, 20, 80);
+                      align-items: center;
+                      border-radius: 5px;
+                      padding-left: 40px;
+                      background-color: white;
+                  }
+                  .navbar-links{
+                      display: flex;
+                      column-gap: 20px;
+                      font-size: 20px;
+                      font-family: 'poppins',sans-serif;
+                      font-weight:600;
+                      padding-right: 10px;
+                  }
+                  .navbar-links a{
+                  text-decoration: none;
+                  color: rgb(1, 20, 80);
+                  }
+                  .imgd{
+                      padding-left: 20px;
+                      padding-top: 20px;
+                  }
+                  .service{
+                      padding: 20px;
+                  }
+                  .service-container-2{
+                      background-color: #F2F4F7;
+                      display: flex;
+                      border-radius: 5px;
+                      gap: 10px;
+                      font-family: 'poppins',sans-serif;
+                      align-items: center;
+                      color: rgb(1, 20, 80);
+                  }
+                  .service-container-2 div{
+                      background-color: #F2F4F7;
+                      border-radius: 5px;
+                      padding: 10px;
+                  }
+                  .footer{
+                  margin-top: 30px;
+                  padding: 30px;
+                  background-color: rgb(1, 20, 80);
+                  color: #ffffff;
+                  font-family: 'poppins',sans-serif;
+              
+              }
+              .img1{
+                  justify-content: center;
+                  border-radius: 10px;
+              }
+              .img{
+                  padding: 10px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding-top: 40px;
+              }
+              .word1{
+                  font-family: 'poppins',sans-serif;
+                  justify-content: center;
+                  display: flex;
+                  font-size: 30px;
+                  color: rgb(1, 20, 80);
+              }
+              .title{
+                  font-family: 'poppins',sans-serif;
+                  color: rgb(1, 20, 80);
+                  padding-left: 30px;
+              }
+
+              </style>
+                            <style>
+                                /* Customizing the scrollbar */
+                                ::-webkit-scrollbar {
+                                    width: 12px; /* Width of the scrollbar */
+                                   height: 50px;
+                            
+                                }
+                            
+                                /* Track */
+                                ::-webkit-scrollbar-track {
+                                    background: #a6b3ff70; /* Color of the scrollbar track */
+                                }
+                            
+                                /* Handle */
+                                ::-webkit-scrollbar-thumb {
+                                    background: rgb(0, 27, 116); /* Color of the scrollbar handle */
+                                    border-radius: 5px;
+                                   height: 50px;
+                            
+                                }
+                            
+                                /* Handle on hover */
+                                ::-webkit-scrollbar-thumb:hover {
+                                    background: rgb(1, 30, 128); /* Color of the scrollbar handle on hover */
+                                }
+                            
+                                /* Example content with long height */
+                            </style>
+<div class="sidebar" id="mySidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="sidecontent">
+    <a href="file:///d%3A/music_player/popular.html">popular</a>
+    <a href="file:///d%3A/music_player/lastest.html">Lastest</a>
+    <a href="file:///d%3A/music_player/kuthu.html">kuthu vibes</a>
+    <a href="file:///D:/contactsweb.html">Contact</a>
+  </div>
+  </div>
+  
+  
+  
+  <script>
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+  </script>
+  <style>
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(1, 20, 80);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      font-family: 'poppins',sans-serif;
+    
+    }
+    
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #ffffff;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .sidebar a:hover {
+      color: #00ff88;
+    }
+    
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      color: rgb(1, 20, 80);
+      padding: 10px 15px;
+      border: none;
+      font-family: 'poppins',sans-serif;
+      font-weight: 600;
+      background-color: transparent;
+    }
+    .sidecontent{
+      padding-left: 30px;
+      padding-top: 35px;
+    }
+    </style>
+    
+</body>
+</html>
